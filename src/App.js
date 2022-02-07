@@ -1,44 +1,30 @@
-import React, { useState } from 'react';
-import Nav from './components/Nav';
-import About from './components/About';
-import Gallery from './components/Gallery';
-import ContactForm from './components/Contact';
-import './App.css';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LandingPage from './components/LandingPage';
+import Main from './components/Main';
+import { Link } from 'react-router-dom';
+
+
 
 function App() {
-  const [categories] = useState([
-    {
-      name: 'commercial',
-      description: 'Photos of grocery stores, food trucks, and other commercial projects',
-    },
-    { name: 'portraits', description: 'Portraits of people in my life' },
-    { name: 'food', description: 'Delicious delicacies' },
-    { name: 'landscape', description: 'Fields, farmhouses, waterfalls, and the beauty of nature' },
-  ]);
-
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
-  const [contactSelected, setContactSelected] = useState(false);
-
   return (
     <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      ></Nav>
-      <main>
-        {!contactSelected ? (
-          <>
-            <Gallery currentCategory={currentCategory}></Gallery>
-            <About></About>
-          </>
-        ) : (
-          <ContactForm></ContactForm>
-        )}
-      </main>
+  <Navbar bg="dark" variant="dark">
+    <Container fluid ='md'>
+    <Navbar.Brand href="#home">Zak K.</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="/aboutme">About Me</Nav.Link>
+      <Nav.Link href="#portfolio">Portfolio</Nav.Link>
+      <Nav.Link href="#resume">Resume</Nav.Link>
+      <Nav.Link href="#contact">Contact</Nav.Link>
+    </Nav>
+    </Container>
+  </Navbar>
+  <Container>
+    <LandingPage />
+  </Container>
     </div>
   );
 }
