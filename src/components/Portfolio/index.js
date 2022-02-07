@@ -2,12 +2,12 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container } from "react-bootstrap";
 
-function About() {
+function Portfolio() {
   return (
     <Container>
-      <h1>About Page</h1>
+      <h1>Portfolio</h1>
     </Container>
   );
 }
 
-export default About;
+export default Portfolio;
