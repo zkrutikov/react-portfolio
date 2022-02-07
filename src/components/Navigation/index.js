@@ -9,7 +9,9 @@ function Navigation() {
   return (
     <Navbar bg="dark" variant="dark">
       <Container fluid="md">
-        <Navbar.Brand href="/home">Zak K.</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <Link to="/landingpage"></Link>Zak K.
+        </Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="/aboutme">
             <Link to="/aboutme"></Link>About Me
