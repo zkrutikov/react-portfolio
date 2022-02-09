@@ -21,3 +21,10 @@ code {
 .link {
   text-decoration: none;
 }
+
+#video {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  flex: 1;
+}
